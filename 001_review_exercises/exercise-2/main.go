@@ -12,6 +12,10 @@ package main
 - print a field from secret agent
 - run saSpeak attached to the variable of type secret agent
 - run pSpeak attached to the variable of type secret agent
+- create an interface type that both person and secretAgent implement
+- declare a func with a parameter of the interface’s type
+- call that func in main and pass in a value of type person
+- call that func in main and pass in a value of type secretAgent
 */
 
 import "fmt"
@@ -30,16 +34,24 @@ type secretAgent struct {
 	agency string
 }
 
+type homosapien interface {
+	speak()
+}
+
 // //////////////////////////////////////////////////////////////////////////////////
 // PACKAGE FUNCTIONS
 // //////////////////////////////////////////////////////////////////////////////////
 
-func (p *person) pSpeak() {
+func (p person) speak() {
 	fmt.Println(p.fName)
 }
 
-func (sa *secretAgent) saSpeak() {
+func (sa secretAgent) speak() {
 	fmt.Println(sa.agency, sa.fName, sa.lName)
+}
+
+func consciousHuman(h homosapien) {
+	fmt.Println(h)
 }
 
 // //////////////////////////////////////////////////////////////////////////////////
@@ -54,7 +66,10 @@ func main() {
 		agency: "Kingsguard:",
 	}
 
-	dndChar.pSpeak()
-	saDndChar.saSpeak()
-	saDndChar.pSpeak()
+	dndChar.speak()
+	saDndChar.speak()
+	saDndChar.speak()
+
+	consciousHuman(saDndChar)
+	consciousHuman(dndChar)
 }
