@@ -27,6 +27,7 @@ type person struct {
 
 type secretAgent struct {
 	person
+	agency string
 }
 
 // //////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +39,7 @@ func (p *person) pSpeak() {
 }
 
 func (sa *secretAgent) saSpeak() {
-
+	fmt.Println(sa.agency, sa.fName, sa.lName)
 }
 
 // //////////////////////////////////////////////////////////////////////////////////
@@ -47,9 +48,13 @@ func (sa *secretAgent) saSpeak() {
 
 func main() {
 	dndChar := person{fName: "Nas", lName: "Lókë"}
-	// saDndChar := secretAgent{
-	// 	person{fName: "Rogar", lName: "The Rogue"},
-	// }
+
+	saDndChar := secretAgent{
+		person: person{fName: "Rogar", lName: "The Rogue"},
+		agency: "Kingsguard:",
+	}
 
 	dndChar.pSpeak()
+	saDndChar.saSpeak()
+	saDndChar.pSpeak()
 }
