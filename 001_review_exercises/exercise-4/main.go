@@ -8,5 +8,12 @@ package main
 */
 
 func main() {
+	m := make(map[string]int)
+
+	m["favNum1"] = 13
+	m["favNum2"] = 7
+	m["favNum3"] = 3
+
+	// n := map[string]int{"favNum4": 1, "favNum5": 9}
 
 }
