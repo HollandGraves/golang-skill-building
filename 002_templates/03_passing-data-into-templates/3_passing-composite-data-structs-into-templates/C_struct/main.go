@@ -1,6 +1,8 @@
 package main
 
 import (
+	"log"
+	"os"
 	"text/template"
 )
 
@@ -10,8 +12,13 @@ import (
 
 var tpl *template.Template
 
+type sage struct {
+	Name  string
+	Motto string
+}
+
 func init() {
-	tpl = template.Must(template.ParseFiles("tpl.gohtml"))
+	tpl = template.Must(template.ParseGlob("templates/*.gohtml"))
 }
 
 // //////////////////////////////////////////////////////////////////////////////////
@@ -19,5 +26,18 @@ func init() {
 // //////////////////////////////////////////////////////////////////////////////////
 
 func main() {
+	buddha := sage{
+		Name:  "Buddha",
+		Motto: "The belief of no beliefs",
+	}
 
+	err := tpl.ExecuteTemplate(os.Stdout, "tpl1.gohtml", buddha)
+	if err != nil {
+		log.Fatalln("Error:", err)
+	}
+
+	err = tpl.ExecuteTemplate(os.Stdout, "tpl2.gohtml", buddha)
+	if err != nil {
+		log.Fatalln("Error:", err)
+	}
 }
