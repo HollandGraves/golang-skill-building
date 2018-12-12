@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF=8" />
+    <title>Functions In Templates</title>
+</head>
+<body>
+    The players in our D&D session are: 
+    <ul>
+        {{range .DndChars}}
+        <li>Name: {{tt .Name}}</li>
+        <li>Alignment: {{fl .Alignment}}</li>
+        {{end}}
+    </ul>
+</body>
+</html>

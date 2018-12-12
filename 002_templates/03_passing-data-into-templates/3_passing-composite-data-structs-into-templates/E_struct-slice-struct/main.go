@@ -95,19 +95,8 @@ func main() {
 	// //////////////////////////////////////////////////////////////////////////////////
 
 	people := people{
-		SageSliceStruct: []sages{
-			buddha,
-			mlk,
-			gandhi,
-			jesus,
-			muhammad,
-		},
-		MusicianSliceStruct: []musicians{
-			corpseGrinder,
-			erikRutan,
-			muhammadSuicmez,
-			floMounier,
-		},
+		SageSliceStruct:     []sages{buddha, mlk, gandhi, jesus, muhammad},
+		MusicianSliceStruct: []musicians{corpseGrinder, erikRutan, muhammadSuicmez, floMounier},
 	}
 
 	err := tpl.ExecuteTemplate(os.Stdout, "tpl.gohtml", people)

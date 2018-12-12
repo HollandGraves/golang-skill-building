@@ -6,14 +6,13 @@
 </head>
 <body>
     <ul>
-        {{range .MusicianSliceStruct}}
-        <li>{{.ShowName}} is, or once upon a time was, in {{.Band}}</li>
-        {{end}}
-    </ul>
-
-    <ul>
         {{range .SageSliceStruct}}
         <li>{{.Name}}'s motto was: {{.Motto}}</li>
+        {{end}}
+    </ul>
+    <ul>
+        {{range .MusicianSliceStruct}}
+        <li>{{.ShowName}} is, or once upon a time was, in {{.Band}}</li>
         {{end}}
     </ul>
 </body>
