@@ -5,6 +5,9 @@ import (
 	"log"
 	"os"
 	"strings"
+
+	// testing importing functions from a homebrewed dependency
+	"github.com/go-udemy-course-exercises/golang-skill-building/002_templates/04_passing-functions-into-templates/1_FuncMap/supportFuncs"
 )
 
 // //////////////////////////////////////////////////////////////////////////////////
@@ -40,6 +43,9 @@ type Dnd struct {
 var fm = template.FuncMap{
 	"tt": strings.Title,
 	"fl": firstLetters,
+
+	// function from homebrewed dependency
+	"sfl": supportFuncs.FirstLetters,
 }
 
 var tpl *template.Template
