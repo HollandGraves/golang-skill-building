@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pipelines in Go Templates</title>
+</head>
+<body>
+
+    The double of 4 is {{di 4}}
+
+    {{/* 
+        It is important to notice that, if you are 
+        piplining into a function, the pipelined
+        result will be placed as the LAST arg of
+        a function that takes multiple arguments
+
+        // e.g.
+        // 4 * 2 == 8
+        // turn to float64
+        // 2 ^ 8 == 256
+        The square of the double of 4 is {{di 4 | nitf | sn 2}}
+    */}}
+
+    The double of 4's double is {{di 4 | di}}
+
+</body>
+</html>
