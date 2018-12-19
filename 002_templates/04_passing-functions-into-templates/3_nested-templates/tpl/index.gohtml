@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Nesting Templates</title>
+    <link rel="stylesheet" href="../main.css" />
+</head>
+<body>
+    {{add 2 4 | double}}
+
+    {{template "header" .}}
+
+    {{template "sidebar" .}}
+
+    {{template "feed" .}}
+
+    {{template "column" .}}
+</body>
+</html>
