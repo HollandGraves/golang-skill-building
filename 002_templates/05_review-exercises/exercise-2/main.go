@@ -70,7 +70,7 @@ func main() {
 	/*
 		RESTAURANTS
 	*/
-	bv := Restaurant{
+	bvc := Restaurant{
 		Name:      "Basic Vegan Choices",
 		Hours:     "10:00 A.M. - 8:00 P.M.",
 		Breakfast: []Food{avocado, sourdoughToast, gtKombucha},
@@ -89,7 +89,7 @@ func main() {
 	/*
 		ANONYMOUS STRUCT TO PASS INTO TEMPLATE AS DATA
 	*/
-	restaurants := []Restaurant{bv, hdr}
+	restaurants := []Restaurant{bvc, hdr}
 
 	data := struct {
 		GetFoodPlace []Restaurant
