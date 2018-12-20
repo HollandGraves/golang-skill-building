@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Passing Data Into Templates</title>
+</head>
+<body>
+    These are hotels in California I would like to visit:
+    {{range .CaliHotels}}
+        {{.Name}}
+        {{.Address}}
+        {{.City}}
+        {{.Zip}}
+        {{.Region}}
+    {{end}}
+</body>
+</html>
