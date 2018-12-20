@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8" />
+    <title>Passing Data Into Templates</title>
+</head>
+<body>
+    My favorite restaurants are:
+    {{range .GetFoodPlace}}
+    {{.Name -}}
+    {{end}}
+
+    My favorite breakfast foods are:
+    {{range .GetFoodPlace}}
+    {{range .Breakfast}}
+    {{.Name -}}
+    {{end}}
+    {{end}}
+</body>
+</html>
