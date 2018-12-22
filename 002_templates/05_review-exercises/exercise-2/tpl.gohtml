@@ -10,11 +10,33 @@
     {{.Name -}}
     {{end}}
 
+
     My favorite breakfast foods are:
-    {{range .GetFoodPlace}}
-    {{range .Breakfast}}
+
+    {{/* 
+
+        To target specific layers nested at the bottom of
+        slice-struct-slice-structs, use the following syntax:
+        - (note code below these two comments) -
+        1. e.g. (index .Struct-Slice-Of-Struct 0).Desired-Key
+        a. the index is a predefined global function within
+        templates that let you target specific layers of a
+        slice / array
+        b. .Struct-Slice-Of-Struct is the struct layer within
+        the targeted index that you wish to access
+        c. .Desired-Key is the layer that contains the info 
+        you wish to access
+
+
+        In the below case a range is used because
+        at the .Desired-Key you have a slice of structs.
+        In this case I seek to extract a specific piece
+        of info from all the structs in the slice.
+        
+    */ -}}
+
+    {{range (index .GetFoodPlace 0).Breakfast }}
     {{.Name -}}
-    {{end}}
     {{end}}
 </body>
 </html>
