@@ -1,7 +1,8 @@
 package main
 
 /*
-	Using the data structure created in the previous folder, modify it to hold menu information for an unlimited number of restaurants.
+	Parse this CSV file, putting two fields from the contents of the CSV file into a data structure.
+	Parse an html template, then pass the data from step 1 into the CSV template; have the html template display the CSV data in a web page.
 */
 
 // //////////////////////////////////////////////////////////////////////////////////
